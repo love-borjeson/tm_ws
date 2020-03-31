@@ -41,7 +41,7 @@ Select *Packages* and then *Install*. You will now see a dialog box. In it, ente
 - scales
 - plotly
 
-It will take a while to install all packages. In RStudio, a small red stop button will be displayed as long as R is working on an installation. As long as it is red, do not interrupt, switch off or give the program new instructions.
+It will take a while to install all packages. In RStudio, a small red stop button will be displayed as long as R is working on an installation. As long as it is red, do not interrupt, close, or give the program new instructions.
 
 **Download workshop material and tell R where you put the material**
 Download all material in this repository using the green drop-menu button *Clone or download* and select *download ZIP*.
