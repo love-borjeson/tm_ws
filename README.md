@@ -1,31 +1,31 @@
-# tm_ws
-Topic modeling workshop in R, data and scripts.
+# Topic modeling in R
+Topic modeling workshop in R, data and scripts. The workshop goes through *topic modeling*; (tweaking) the *Gibbs sampler*; using and editing a *stoplist*; linguistically inform the model using *Part-of-Speech*, *Lemmatization* and *key-words*; finding the appropriate *number of topics* (hello K!); and, finally, *exporting model results* to the extra-R world (if there is such a world). Bonus scripts (6-7) include code to build and app that will let you *interact with the model and the original data* at the same time and some *eye-candy* if you have the need to impress someone with your results.
 
-Instructions for preparations can be found here (currently only in Swedish):
+Below follows instructions on how to prepare for the workshop.
+
+Identical instructions but in Swedish, can be found here:
 
 https://docs.google.com/document/d/1OcbGpYs6L_KmWT6EYhjpi3MZJzX3CaNhHfDCrP5alDw/edit?usp=sharing
 
 All material is unlicensed, i.e. donated to the public domain. Please feel free to give credit where credits due.
 
-**FÖRBEREDELSER**
+Contact: *Love Börjeson,*  [love.borjeson@kb.se](love.borjeson@kb.se)
 
-*Kontakt: Love Börjeson, [**love.borjeson@kb.se**](mailto:love.borjeson@kb.se)*
+**PREPARATIONS**
 
-Oftast är det enkelt att genomföra de förberedande stegen nedan. Om du ändå stöter på problem, ta hjälp av din IT-avdelning på din institution. Man kan också försöka med att googla: får du ett felmeddelande, prova att klistra in det i din webläsare.
+Usually, it is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.
 
-**Installera R och RStudio**
+**Install R and RStudio**
+Install R, from here: https://cran.r-project.org/
+Install RStudio, from here https://rstudio.com/products/rstudio/ Select *RStudio Desktop Open Scource Edition*.
 
-Installera R, härifrån: https://cran.r-project.org/
+**Install the necessary packages**
+Open Rstudio. RStudio's workspace is divided into different fields. In the lower right field, there are menus for *Files*, *Plots*, *Packages*, *Help* and *Viewer* options.
 
-Installera RStudio, härifrån https://rstudio.com/products/rstudio/ Välj RStudio Desktop Open Scource Edition.
+Select *Packages* and then *Install*. You will now see a dialog box. In it, enter the name of the package and press install. Do not change any other settings in the dialog box. Install the following packages one at a time:
 
-**Installera nödvändiga paket**
-
-Öppna Rstudio. RStudios arbetsyta är uppdelad i olika fält. I den nedersta, högra fältet finns det en meny med alternativen Files, Plots, Packages, Help och Viewer. Välj Packages och sedan Install.
-
-Du får nu upp en dialogruta. I den skriver du in paketets namn och trycker på install. Ändra inga inställningar i dialogrutan i övrigt. Installera, ett i taget, följande paket:
-
-- tmtopicmodels
+- tm
+- topicmodels
 - slam
 - LDAvis
 - servr
@@ -41,12 +41,11 @@ Du får nu upp en dialogruta. I den skriver du in paketets namn och trycker på 
 - scales
 - plotly
 
-Det kommer ta ett tag att installera alla paket. I RStudio kommer det visas en liten röd stoppknapp så länge R arbetar med en installation. Så länge den är röd ska man inte avbryta, stänga av eller ge programmet nya instruktioner.
+It will take a while to install all packages. In RStudio, a small red stop button will be displayed as long as R is working on an installation. As long as it is red, do not interrupt, switch off or give the program new instructions.
 
-**Ladda ned workshopmaterial och tala om för R var du lagt materialet**
+**Download workshop material and tell R where you put the material**
+Download all material in this repository using the green drop-menu button *Clone or download* and select *download ZIP*.
 
-Här hittar du allt material du behöver till workshopen: https://github.com/love-borjeson/tm_ws Använd den gröna knappen Clone or download och välj download ZIP.
+Create a folder for the workshop on your computer and save the zip file there. Unzip.
 
-Skapa en mapp för workshopen på din dator och spara zipfilen där. Extrahera zipfilen.
-
-Öppna RStudio. I RStudios menyrad högst upp hittar du menyn Session. Öppna den och navigera till Set Working Directory/Choose Directory. Du får då upp ett vanligt navigeringsfönster där du navigerar dig fram till den mapp där du lagt labbmaterialet.
+Open RStudio. In the RStudio's menu bar at the top, you will find the *Session* menu. Open it and navigate to *Set Working Directory* / *Choose Directory*. You will then get a regular navigation window where you navigate to the folder where you put the lab material.
