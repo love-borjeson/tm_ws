@@ -13,7 +13,7 @@ Responsible for this workshop: [Love Börjeson](love.borjeson@kb.se), Director o
 
 **PREPARATIONS**
 
-Usually, it is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.
+It is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.
 
 **Install R and RStudio**
 
