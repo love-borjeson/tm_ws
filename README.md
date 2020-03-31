@@ -9,7 +9,7 @@ https://docs.google.com/document/d/1OcbGpYs6L_KmWT6EYhjpi3MZJzX3CaNhHfDCrP5alDw/
 
 All material is unlicensed, i.e. donated to the public domain. Please feel free to give credit where credits due.
 
-Contact: *Love Börjeson,*  [love.borjeson@kb.se](love.borjeson@kb.se)
+Responsible for this workshop: *[Love Börjeson](love.borjeson@kb.se) ,*Director of KBLab at the National Library of Sweden
 
 **PREPARATIONS**
 
@@ -17,6 +17,7 @@ Usually, it is usually pretty straight forward to complete the preparatory steps
 
 **Install R and RStudio**
 Install R, from here: https://cran.r-project.org/
+
 Install RStudio, from here https://rstudio.com/products/rstudio/ Select *RStudio Desktop Open Scource Edition*.
 
 **Install the necessary packages**
