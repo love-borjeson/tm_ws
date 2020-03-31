@@ -3,7 +3,7 @@ Topic modeling workshop in R, data and scripts. The workshop goes through *topic
 
 Below follows instructions on how to prepare for the workshop.
 
-Identical instructions but in Swedish, can be found here:
+Identical instructions in Swedish can be found here:
 
 https://docs.google.com/document/d/1OcbGpYs6L_KmWT6EYhjpi3MZJzX3CaNhHfDCrP5alDw/edit?usp=sharing
 
