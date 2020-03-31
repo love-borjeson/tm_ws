@@ -1,8 +1,8 @@
 #clean slate...:``
 rm(list = ls())
 
-library(rstudioapi)
-setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
+#library(rstudioapi)
+#setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
 
 text1_small <- readRDS("smalltext1.rds")
 

@@ -1,7 +1,7 @@
 rm(list = ls())
 
-library(rstudioapi)
-setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
+#library(rstudioapi)
+#setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
 
 #We will create an app to interact with out topic model via two outputs,
 #topicDocProbabilities (gamma) and topic summary. We will enrich the latter a bit.

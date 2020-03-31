@@ -4,8 +4,8 @@
 #clean slate...:
 rm(list = ls())
 
-library(rstudioapi)
-setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
+#library(rstudioapi)
+#setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
 
 #The only thing we need really, for both lda tuning and perplexity calculations is our dtm, "dtmKW".
 dtmKW <- readRDS("dtmKW.rds")

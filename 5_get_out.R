@@ -1,7 +1,7 @@
 rm(list = ls())
 
-library(rstudioapi)
-setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
+#library(rstudioapi)
+#setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path))
 
 library(topicmodels)
 modelBig100<- readRDS("model_k100.rds") #This one we'll use'. 
