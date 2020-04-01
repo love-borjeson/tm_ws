@@ -59,3 +59,9 @@ Download all material in this repository using the green drop-menu button *Clone
 Create a folder for the workshop on your computer and save the zip file there. Unzip.
 
 Open RStudio. In the RStudio's menu bar at the top, you will find the *Session* menu. Open it and navigate to *Set Working Directory* / *Choose Directory*. You will then get a regular navigation window where you navigate to the folder where you put the lab material.
+
+**Start the workshop**
+
+Open RStudio. From the *File* menu, choose *Open file*. Navigate to the folder where you saved the workshop material. Select *1_simple_model.R*
+
+When the script open in RStudio, place the cursor at the top and press ctrl+enter. You can now use this to ctrl-enter your way through script 1-7. It is recommended to run the scripts in order, but every script *can* be run independently. Buckle-up and enjoy!
