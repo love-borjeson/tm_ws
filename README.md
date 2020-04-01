@@ -5,7 +5,7 @@ Topic modeling workshop in R, data and scripts. The workshop goes through *topic
 
 In this workshop we adopt the learning philosophy of [Fast AI](https://www.fast.ai/2016/10/08/teaching-philosophy/). Rather than starting off with the typical “Hello World” and building from ground up (which would take years of training), we start in the other end with state-of-the-art modeling, using very practical, (re-)usable examples. Many of the finer details of both the scripts and the underlying statistical “machinery” will, with this approach, be hard to get immediately, *but that is ok*: scripts and data are written and organized in such a way that each participant can return to whatever section of the workshop that has been unclear to gain a better understanding by themself. The scripts are plentifully commented and the only command ever needed is ctrl+enter.
 
-This is a *friendly, inclusive*, workshop. We believe that trying is the right thing to do, *even when you fail*. We thus *encourage everyone* who is interested to participate, regardless of prior knowledge. Should you feel that you need more preparations (theoretical, technical, or otherwise), that will not be the end of the world.
+This is a *friendly, inclusive*, workshop. We believe that *trying* is the right thing to do, *even when you fail*. We thus *encourage everyone* who is interested to participate, regardless of prior knowledge. Should you feel that you need more preparations (theoretical, technical, or otherwise), that will not be the end of the world.
 
 Below follows instructions on how to prepare for the workshop.
 
