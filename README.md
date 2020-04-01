@@ -64,5 +64,5 @@ Open RStudio. In the RStudio's menu bar at the top, you will find the *Session* 
 
 Open RStudio. From the *File* menu, choose *Open file*. Navigate to the folder where you saved the workshop material. Select *1_simple_model.R*
 
-When the script open in RStudio, place the cursor at the top and press *ctrl+enter*. You can now ctrl-enter your way through script 1-7. It is recommended to run the scripts in order, but every script *can* be run independently. Buckle-up and enjoy!
+When the script open in RStudio, place the cursor at the top and press *ctrl+enter*. You can now ctrl-enter your way through script 1-7 (script 6-7 requires some additional packages to be installed, you'll notice when you get there). It is recommended to run the scripts in order, but every script *can* be run independently. Buckle-up and enjoy!
 
