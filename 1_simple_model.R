@@ -1,8 +1,8 @@
 #clean slate...:
 rm(list = ls())
 
-library(rstudioapi)
-setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path)) #won't take '????' etcetera in your filepath.
+#library(rstudioapi)
+#setwd(dirname(rstudioapi::callFun("getActiveDocumentContext")$path)) #won't take '????' etcetera in your filepath.
 
 text1 <- read.csv ("jokes.csv", stringsAsFactors=FALSE)
 summary(text1)
