@@ -20,6 +20,16 @@ View(z)
 #Handles twitter better than Shakespeare, apparently.
 rm(z)
 
+
+###############################For reference!
+#parallelize!!
+#Annotation - unlike topic modeling - can be readily parallelized.
+#library(parallel) #This package speaks with udpipe.
+#cores <- detectCores(logical = TRUE) - 1 #leave one-two for stability
+#And then run the annotation...:
+#x <- udpipe(Text1Full, Eng_model, parallel.cores = cores)
+###############################
+
 x <- readRDS("annotated_jokes.rds") #pre-annotated our joke sub-sample to save time...
 
 x$topic_level_id <- unique_identifier(x, fields = c("doc_id", "paragraph_id", "sentence_id"))
