@@ -40,7 +40,6 @@ Select *Packages* and then *Install*. You will now see a dialog box. In it, ente
 - servr
 - textclean
 - chinese.misc
-- slam
 - udpipe
 - dplyr
 - ldatuning
