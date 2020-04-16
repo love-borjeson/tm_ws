@@ -43,9 +43,7 @@ Select *Packages* and then *Install*. You will now see a dialog box. In it, ente
 - slam
 - udpipe
 - dplyr
-- parallel
 - ldatuning
-- doParallel
 - ggplot2
 - scales
 - plotly
