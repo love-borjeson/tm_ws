@@ -46,6 +46,11 @@ colnames(text1) #ok, now we're good to go.
 saveRDS(text1, file = "smalltext1.rds") #for later use.
 
 library(tm)
+#If you get this: Error: package or namespace load failed for ‘tm’
+#in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+#there is no package called ‘Rcpp’
+#...then install the Package "Rcpp".
+
 corp1 <- VCorpus(DataframeSource(text1)) #create a corpus.
 #a corpus is (for the purpose of this script/lab) a data class of tm that holds all of our texts
 #and that we can manipulate in various ways. See below.
@@ -66,7 +71,7 @@ ui <- unique(dtm1$i) #i for rows...
 dtm1 <- dtm1[ui,] #remove empty docs
 nrow(dtm1) #So here we trim the dtm a little, but thanks to
 #the 'DataFrameSource' described above, we maintain our linkage to the original corpus and text. 
-
+#textminer
 library(topicmodels) #This is the standard, go-to package, for topic modeling in R. 
 
 k <- 24 #no of topics.

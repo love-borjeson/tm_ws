@@ -206,7 +206,7 @@ topicmodels2LDAvis <- function(x, ...){
 }
 
 library(LDAvis)
-serVis(topicmodels2LDAvis(model2))
+serVis(topicmodels2LDAvis(model4))
 #Notice how the size (and spread) of topics (in the MDS) is much more even than before.
 #We can now say that the model i symmetric, which is a good thing,
 #since there's not any implementation for an asymmetric LDA in R (know to me, at least)

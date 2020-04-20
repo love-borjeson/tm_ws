@@ -171,7 +171,7 @@ for (var i = 0; i < tips.length; i++) {
 #Combine user interface and server function into an app:
 shinyApp(ui, server)
 
-#check out, e.g., topic no 5.
+  #check out, e.g., topic no 5.
 
 GMY <- "MYA"
 GMY
