@@ -71,13 +71,15 @@ controlGibbs <- list(seed = 5683, #hrm?
                      burnin = 200,
                      iter = 500,
                      delta = 0.15) #with a more dense dtm (resulting from our linguistic pre-processing),
-                     # topics will be very specific,
-                     # almost document-specific (especially for a small corpus).
-                     # We can counter this effect by increasing alpha and/or delta (i.e. beta) slightly.
-                     # Are we then rigging the below tests? In some sense, yes.
-                     # i.e. what we "objectively" find as the appropriate K (no of topics)
-                     # is partly the result of how we tweak delta. 
+# topics will be very specific,
+# almost document-specific (especially for a small corpus).
+# We can counter this effect by increasing alpha and/or delta (i.e. beta) slightly.
+# Are we then rigging the below tests? In some sense, yes.
+# i.e. what we "objectively" find as the appropriate K (no of topics)
+# is partly the result of how we tweak delta. 
 
+library(parallel) #If you run this locally, un-comment this and make the suggetsted changes below at "mc.cores"
+detectCores()-1
 library(ldatuning)
 result <- FindTopicsNumber(
   dtmKW,
@@ -85,12 +87,12 @@ result <- FindTopicsNumber(
   metrics = c("Griffiths2004", "CaoJuan2009"),
   method = "Gibbs",
   control = controlGibbs,
-  mc.cores = 7L, #L for logical. How can we find out how many cores we have?! If nothing else, use 'nproc' in the terminal
+  mc.cores = detectCores()-1,
   verbose = TRUE
 )
 FindTopicsNumber_plot(result)
 
-#If you use to many cores on large models (say, many models >300 topics) you can run out of RAM and then R/RStudio
+#If you use to many cores on large models (say, many models and >300 topics) you can run out of RAM and then R/RStudio
 #will abort your session. Solution: use fewer cores but more time. Or get more RAM.
 
 
@@ -123,73 +125,74 @@ FindTopicsNumber_plot(result)
 #Below script is ever so slightly adjusted from..:
 #https://www.r-bloggers.com/cross-validation-of-topic-modelling/.
 #Hats of to the r-blogger "Peter's stats stuff - R".
-#library(chinese.misc)
-#dtmKW <- m3m(dtmKW, "dtm") #The below function needs a 2d dtm...
+library(chinese.misc)
+dtmKW <- m3m(dtmKW, "dtm") #The below function needs a 2d dtm...
+#Ignore the warnings
 
-#library(doParallel)
-#ForEach is a smarter version of parallelization, since it does not split the data, but the processes.
+library(doParallel)
+#ForEach is a different way to parallelize, since it does not split the data, but the processes.
 
-#burnin = 200
-#iter = 500
-#keep = 50 
-#delta = 0.15 #We need these stated individually, to call them inside the below function...
+burnin = 200
+iter = 500
+keep = 50 
+delta = 0.15 #We need these stated individually, to call them inside the below function...
 
-#n <- nrow(dtmKW) #We need this for splitting the sample
+n <- nrow(dtmKW) #We need this for splitting the sample
 
-#cluster <- makeCluster(detectCores(logical = TRUE) - 1) # leave one CPU to spare for stability...
+cluster <- makeCluster(detectCores(logical = TRUE) - 1)
 
-#registerDoParallel(cluster)
+registerDoParallel(cluster)
 
-#clusterEvalQ(cluster, {
-#  library(topicmodels)
-#})
+clusterEvalQ(cluster, {
+  library(topicmodels)
+})
 
-#folds <- 3 #For the overachievers: =>5.
-#splitfolds <- sample(1:5, n, replace = TRUE) #1:5 will result in (roughly) a 80/20 split.
+folds <- 3 #For the overachievers: =>5.
+splitfolds <- sample(1:5, n, replace = TRUE) #1:5 will result in (roughly) a 80/20 split.
 
 #to inspect train and validation data-set
 #for(i in 1:folds){
 #  train_set <- dtmKW[splitfolds != i , ]
 #  valid_set <- dtmKW[splitfolds == i, ]} #i.e., you do not really need these two objects.
 
-#clusterExport(cluster, c("dtmKW", "burnin", "iter", "keep", "delta", "splitfolds", "folds", "candidate_k"))
+clusterExport(cluster, c("dtmKW", "burnin", "iter", "keep", "delta", "splitfolds", "folds", "candidate_k"))
 #These are 'uploaded' to the clusters to be included in the calculations
 
 #Below, parallelization below by the different number of topics: a processor is allocated a value
 #of k, and does the cross-validation serially. Why (and why not over folds)?
 #Because it is assumed there are more candidate values of k than there are cross-validation folds (k>folds),
-#system.time({
-#  results <- foreach(j = 1:length(candidate_k), .combine = rbind) %dopar%{
-#    k <- candidate_k[j]
-#    results_1k <- matrix(0, nrow = folds, ncol = 2)
-#    colnames(results_1k) <- c("k", "perplexity")
-#    for(i in 1:folds){
-#      train_set <- dtmKW[splitfolds != i , ]
-#      valid_set <- dtmKW[splitfolds == i, ]
-#      fitted <- LDA(train_set, k = k, method = "Gibbs",
-#                    control = list(burnin = burnin, iter = iter, keep = keep, delta = delta) )
-#      results_1k[i,] <- c(k, perplexity(fitted, newdata = valid_set))
-#    }
-#    return(results_1k)
-#  }
-#})
-#stopCluster(cluster)
+system.time({
+  results <- foreach(j = 1:length(candidate_k), .combine = rbind) %dopar%{
+    k <- candidate_k[j]
+    results_1k <- matrix(0, nrow = folds, ncol = 2)
+    colnames(results_1k) <- c("k", "perplexity")
+    for(i in 1:folds){
+      train_set <- dtmKW[splitfolds != i , ]
+      valid_set <- dtmKW[splitfolds == i, ]
+      fitted <- LDA(train_set, k = k, method = "Gibbs",
+                    control = list(burnin = burnin, iter = iter, keep = keep, delta = delta) )
+      results_1k[i,] <- c(k, perplexity(fitted, newdata = valid_set))
+    }
+    return(results_1k)
+  }
+})
+stopCluster(cluster)
 
-#results_perplexity <- as.data.frame(results)
+results_perplexity <- as.data.frame(results)
 
-#library(ggplot2)
-#library(scales)
-#p <- ggplot(results_perplexity, aes(x = k, y = perplexity)) +
-#  geom_point(pch = 21, size = 2, fill = I("orange")) +
-#  geom_line(color=c("#753633"),size=0.5) +
-#  ggtitle("3-fold cross-validation of LDA-model with Gobbs sampler on the 'jokes' dataset",
-#          "Perplexity when fitting the trained model to the hold-out set.") +
-#  labs(x = "Candidate number of topics", y = "Perplexity when fitting the trained model to the hold-out set")
+library(ggplot2)
+library(scales)
+p <- ggplot(results_perplexity, aes(x = k, y = perplexity)) +
+  geom_point(pch = 21, size = 2, fill = I("orange")) +
+  geom_line(color=c("#753633"),size=0.5) +
+  ggtitle("3-fold cross-validation of LDA-model with Gobbs sampler on the 'jokes' dataset",
+          "Perplexity when fitting the trained model to the hold-out set.") +
+  labs(x = "Candidate number of topics", y = "Perplexity when fitting the trained model to the hold-out set")
 
-#p
+p
 
-#library(plotly)
-#ggplotly(p) #The perplexity measure thus indicates a higher no of appropriate topics.
+library(plotly)
+ggplotly(p) #The perplexity measure thus indicates a higher no of appropriate topics.
 
 ###############################################################################
 ###############################################################################
@@ -222,7 +225,7 @@ p
 
 ggplotly(p)
 #So here too, perplexity measures disagrees with the rest of the pack...
-#Nonetheless: Should we keep looking for K, it is between 20 and 100 we should look.
+#Nonetheless: Should we keep looking for K, it is between 8 and 120 we should look.
 
 GMY <- "MYA"
 GMY 
