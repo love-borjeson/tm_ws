@@ -13,9 +13,9 @@ All material is unlicensed, i.e. donated to the public domain. For R, Rstudio an
 
 Responsible for this workshop: [Love Börjeson](love.borjeson@kb.se), Director of KBLab at the National Library of Sweden.
 
-You can take part in the workshop in two ways:
+You can take part in the workshop in two ways, in the cloud or locally:
 
-**1. Run in RStudio Cloud** (recommended for inexperienced users)
+**Option 1. Run in RStudio Cloud** (recommended for inexperienced users)
 
 Get an account for free, here: https://rstudio.cloud
 
@@ -27,7 +27,7 @@ Open "1_simple_model.R".
 
 That's it.
 
-**2. Run in your local IDE**
+**Option 2. Run in your local IDE**
 
 **Preparations** IMPORTANT: DO THIS PRIOR TO THE WORKSHOP
 
