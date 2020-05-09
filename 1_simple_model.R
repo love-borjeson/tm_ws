@@ -121,6 +121,7 @@ topicmodels2LDAvis <- function(x, ...){
 #ok, got it. Now, just put as argument your LDA model:
 serVis(topicmodels2LDAvis(model1)) #call the function with the model (here, model1) as argument.
 #Hiccup? You may need to install and load 'servr'.
+#Also, you may need to try reload or to allow pop-up windows for rstudio.cloud. 
 
 GMY <- "MYA"
 GMY

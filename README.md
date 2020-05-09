@@ -19,7 +19,13 @@ Responsible for this workshop: [Love Börjeson](love.borjeson@kb.se), Director o
 
 **PREPARATIONS** IMPORTANT: DO THIS PRIOR TO THE WORKSHOP
 
-It is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.
+It is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.  You can make the preparations running the preparation script (Option 1) OR by following the below instructions (Option 2).
+
+**Option 1:**
+
+Run the preparation script in R/RStudio named 0_preparations.R
+
+**Option 2**
 
 **Install R and RStudio**
 
