@@ -123,8 +123,8 @@ server <- function(input, output) {
   # sorted columns are colored now because CSS are attached to them
   output$tbl <- DT::renderDataTable({
     DT::datatable(topicDocProbabilities[, 1:103],
-    extensions = c('FixedColumns'),
-    callback = JS("var tips = ['Row Names', 'doc', 
+                  extensions = c('FixedColumns'),
+                  callback = JS("var tips = ['Row Names', 'doc', 
     'back,wall,time,oil,king,place,true,matter,great,jack', 'car,driver,window,truck,road,side,wheel,front,highway,gas', 'manager,night,momma,dumb,poor,grandma,dude,telephone_store,tomato,mamma', 'sex,lady,condom,drug,sexual,cigarette,pharmacist,worm,safe,smoke', 'new,line,time,next,idea,much,deal,sale,several,market', 'fart,group,one,way,time,common,good,whole,most,gas', 'baby,fire,pregnant,department,best,plant,right,fact,month,hard', 'farmer,pig,field,farm,duck,bucket,tourist,sheep,well,sweet', 'number,phone,machine,call,hello,name,message,telephone,please,line', 'computer,mouse,help,key,power,email,button,customer,desk,address', 'letter,name,word,more,only,average,first,language,time,moon', 'american,chinese,french,pope,german,mexican,japanese,italian,russian,jewish', 'young_man,beautiful,one,nice,perfect,cowboy,couple,young,smart,handsome', 'box,chocolate,time,rock,one,cookie,full,dark,camel,chip', 'police,gun,death,accident,record,crime,head,knife,state,story', 'well,yes,sir,sorry,reply,okay,right,nice,upset,receptionist', 'water,fish,cold,hot,parrot,boat,air,wood,ice,winter', 'priest,point,nun,rabbi,reply,candy,catholic,good_morning,bishop,true',
     'free,law,government,bridge,time,bad_news,good_news,tax,right,tha', 'tree,few,top,short,bike,right,nut,ugly,dirty,last', 'black,redneck,white,red,shoe,shirt,suit,blue,pair,color', 'head,leg,right,arm,side,left,wooden,artist,next,tattoo', 'plane,seat,pilot,flight,agent,air,passenger,airplane,engine,airport', 'judge,case,truth,court,way,witness,time,charge,defendant,guilty', 'life,age,heaven,indian,good,other,great,chief,rest,big', 'minute,hour,time,clock,bell,degree,day,lie,shoulder,afternoon', 'man,first_man,second_man,penis,third_man,few_minute,rest,brick,embarrassed,special', 'woman,man,breast,women,wrong,need,item,equal,several,dress', 'more,mile,half,pound,time,hour,weight,other,high,low', 'hand,bill,time,else,security,back,other,sound,server,drip', 'bar,beer,bartender,drink,drunk,glass,can,shot,sit,whiskey', 'eye,finger,ear,hair,long,other,blind,nose,lesbian,tongue', 'people,person,same,different,only,one,last,air,art,cake', 'child,parent,family,gay,home,school,marriage,great,kid,half', 'order,large,pizza,other,conversation,voice,time,last,food,one', 'brain,engineer,life,prime,mistake,other,idiot,experience,cell,day', 'difference,common,one,guard,prison,favorite,more,good,period,better',
     'word,cow,milk,bull,other,costello,sentence,more,office,trouble', 'guy,same,next_day,buddy,2nd,first_guy,sure,1st,amazing,cake', 'old,old_man,year,young,gentleman,older,elderly,well,time,age', 'money,dollar,bank,much,cent,check,account,change,business,rich', 'problem,wrong,way,morning,sure,while,usage,master,solution,tomorrow', 'question,answer,exam,test,one,correct,sure,final,last,many', 'please,hotel,yesterday,today,room,own,dear,shop,soap,best', 'blonde,brunette,blond,redhead,hair,red,head,turn,dumb,blanket', 'human,toy,cat,good,game,door,food,other,time,bed', 'room,bed,night,roommate,sleep,hour,window,floor,time,ghost', 'bag,bottle,warning,plastic,product,box,food,mouth,use,direction', 'officer,cop,bird,ticket,policeman,donkey,sorry,police_officer,police,license', 'joke,site,page,user,information,other,type,list,such,web_site', 'thing,way,lot,important,stuff,time,whole,only,rat,better', 'fat,mama,stupid,momma,tooth,ugly,yellow,scale,mouth,side', 'year,month,time,last,island,next,ready,better,many_year,last_year', 'people,one,car,water,bottom,hell,day,fire,possible,word', 'shit,ass,hell,chair,day,mountain,monk,bitch,pot,damn', 'world,country,great,place,land,history,famous,city,largest,peace',
@@ -136,19 +136,19 @@ server <- function(input, output) {
 for (var i = 0; i < tips.length; i++) {
   $(header[i]).attr('title', tips[i]);
 }"), # The pasted topic-summary-vector above has to be diveded into seperate lines, 3-5... Or R won't read them.
-    options = list(
-      pageLength = 10,
-      lengthMenu = c(5, 10, 15, 20),
-      scrollX = TRUE,
-      fixedColumns = list(leftColumns = 2, rightColumns = 2),
-      fixedHeader = TRUE,
-      autoWidth = TRUE,
-      columnDefs = list(list(width = '600px', targets = c(103))
-      )))%>% formatStyle(names(topicDocProbabilities[, 2:101]),
-      background = styleColorBar(range(topicDocProbabilities[, 2:101]), 'lightblue'),
-      backgroundSize = '98% 88%',
-      backgroundRepeat = 'no-repeat',
-      backgroundPosition = 'center')
+                  options = list(
+                    pageLength = 10,
+                    lengthMenu = c(5, 10, 15, 20),
+                    scrollX = TRUE,
+                    fixedColumns = list(leftColumns = 2, rightColumns = 2),
+                    fixedHeader = TRUE,
+                    autoWidth = TRUE,
+                    columnDefs = list(list(width = '600px', targets = c(103))
+                    )))%>% formatStyle(names(topicDocProbabilities[, 2:101]),
+                                       background = styleColorBar(range(topicDocProbabilities[, 2:101]), 'lightblue'),
+                                       backgroundSize = '98% 88%',
+                                       backgroundRepeat = 'no-repeat',
+                                       backgroundPosition = 'center')
     
   })
   
@@ -165,13 +165,13 @@ for (var i = 0; i < tips.length; i++) {
                     autoWidth = TRUE
                   ))
   })
-
+  
 }
 
 #Combine user interface and server function into an app:
 shinyApp(ui, server)
 
-  #check out, e.g., topic no 5.
+#check out, e.g., topic no 5.
 
 GMY <- "MYA"
 GMY

@@ -7,25 +7,29 @@ In this workshop we adopt the learning philosophy of [Fast AI](https://www.fast.
 
 This is a *friendly, inclusive*, workshop. We believe that *trying* is the right thing to do, *even when you fail*. We thus *encourage everyone* who is interested to participate, regardless of prior knowledge. Should you feel that you need more preparations (theoretical, technical, or otherwise), that will not be the end of the world.
 
-Below follows instructions on how to prepare for the workshop.
-
-Identical instructions in Swedish can be found [here](https://docs.google.com/document/d/1OcbGpYs6L_KmWT6EYhjpi3MZJzX3CaNhHfDCrP5alDw/edit?usp=sharing).
-
-All material is unlicensed, i.e. donated to the public domain. Please feel free to give credit where credits due.
+All material is unlicensed, i.e. donated to the public domain. For R, Rstudio and packages, additional licenses may apply. Please feel free to give credit where credits due.
 
 Responsible for this workshop: [Love Börjeson](love.borjeson@kb.se), Director of KBLab at the National Library of Sweden.
 
+You can take part in the workshop in two ways:
 
+**1. Run in RStudio Cloud** (recommended for inexperienced users)
 
-**PREPARATIONS** IMPORTANT: DO THIS PRIOR TO THE WORKSHOP
+Get an account for free, here: Need to??
 
-It is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.  You can make the preparations running the preparation script (Option 1) OR by following the below instructions (Option 2).
+Navigate to the project, here:
 
-**Option 1:**
+In the bottom right workspace, open the Files tab (i.e. NOT the ol' Files menu at the top).
 
-Run the preparation script in R/RStudio named 0_preparations.R
+Open "1_simple_model.R". 
 
-**Option 2**
+That's it.
+
+**2. Run in your local IDE**
+
+**Preparations** IMPORTANT: DO THIS PRIOR TO THE WORKSHOP
+
+It is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.
 
 **Install R and RStudio**
 
@@ -33,39 +37,15 @@ Install R, from here: https://cran.r-project.org/
 
 Install RStudio, from here https://rstudio.com/products/rstudio/ Select *RStudio Desktop Open Scource Edition*.
 
-**Install the necessary packages**
+**Get data and scripts, install necessary packages**
 
-Open Rstudio. RStudio's workspace is divided into different fields. In the lower right field, there are menus for *Files*, *Plots*, *Packages*, *Help* and *Viewer* options.
+Clone or download this repo.
 
-Select *Packages* and then *Install*. You will now see a dialog box. In it, enter the name of the package and press install. Do not change any other settings in the dialog box. Install the following packages one at a time:
+Under the "Session" menu in RStudio, choose "Set Working Directory" and tell R where you have put your workshop files.
 
-- tm
-- topicmodels
-- slam
-- LDAvis
-- servr
-- textclean
-- chinese.misc
-- udpipe
-- dplyr
-- ldatuning
-- ggplot2
-- scales
-- plotly
+Run the preparation script in R/RStudio named "0_preparations.R"
 
-It will take a while to install all packages. In RStudio, a small red stop button will be displayed as long as R is working on an installation. As long as it is red, do not interrupt, close, or give the program new instructions.
+**Now, get cracking!**
 
-**Download workshop material and tell R where you put the material**
-
-Download all material in this repository using the green drop-menu button *Clone or download* and select *download ZIP*.
-
-Create a folder for the workshop on your computer and save the zip file there. Unzip.
-
-Open RStudio. In the RStudio's menu bar at the top, you will find the *Session* menu. Open it and navigate to *Set Working Directory* / *Choose Directory*. You will then get a regular navigation window where you navigate to the folder where you put the lab material.
-
-**Start the workshop**
-
-Open RStudio. From the *File* menu, choose *Open file*. Navigate to the folder where you saved the workshop material. Select *1_simple_model.R*
-
-When the script opens in RStudio, place the cursor at the top and press *ctrl+enter*. You can now ctrl-enter your way through script 1-7 (script 6-7 requires some additional packages to be installed, you'll notice when you get there). It is recommended to run the scripts in order, but every script *can* be run independently. Buckle-up and enjoy!
+Start the workshop by executing from "1_simple_model.R"
 

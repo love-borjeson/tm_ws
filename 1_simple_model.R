@@ -1,3 +1,15 @@
+#Start the workshop
+
+#1. Save project for future use.
+#Save temporary project by clicking "Save a Permanent Copy" on the top banner.
+#If yopu do not do this, the project will be lost when you leave it (i.e. when you close your browser).
+
+#2.Execute commands.
+#To execute, place the cursor at the top and press ctrl+enter.
+#You can now ctrl-enter your way through script 1-7.
+#It is recommended to run the scripts in order,
+#but every script can be run independently. Buckle-up and enjoy!
+
 #clean slate...:
 rm(list = ls())
 
@@ -8,6 +20,7 @@ text1 <- read.csv ("jokes.csv", stringsAsFactors=FALSE)
 summary(text1)
 head(text1)
 # *Pungas, T. (2017). A dataset of English plaintext jokes. GitHub repository.
+# Shared under the fair use doctrine.
 
 
 str(text1)
@@ -122,6 +135,8 @@ topicmodels2LDAvis <- function(x, ...){
 serVis(topicmodels2LDAvis(model1)) #call the function with the model (here, model1) as argument.
 #Hiccup? You may need to install and load 'servr'.
 #Also, you may need to try reload or to allow pop-up windows for rstudio.cloud. 
+
+servr::daemon_stop(1) # to stop the server 
 
 GMY <- "MYA"
 GMY

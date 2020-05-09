@@ -155,8 +155,9 @@ radialNetwork(jokesRtreeList) #pretty. Useless.
 
 #PACKED CIRCLE
 # Load the library
+install.packages("devtools") #This to be able to install packages from github
 
-#devtools::install_github("jeromefroe/circlepackeR")
+devtools::install_github("jeromefroe/circlepackeR")
 library(circlepackeR)
 
 # Make the plot. You can custom the minimum and maximum value of the color range.
@@ -165,7 +166,7 @@ circlepackeR(jokesRtree, size = "beta", color_min = "hsl(188, 34%, 67%)", color_
 
 #TREEMAPS
 library(treemap)
-#devtools::install_github("d3treeR/d3treeR")
+devtools::install_github("d3treeR/d3treeR")
 library(d3treeR)
 library(RColorBrewer)
 
