@@ -23,7 +23,7 @@ Navigate to the project, here: https://rstudio.cloud/spaces/68618/project/125762
 
 In the bottom right workspace, open the "Files" tab (i.e. NOT the ol' "File" menu at the top).
 
-Open "1_simple_model.R". 
+Open "1_simple_model.R" and wait for the workshop to start.
 
 That's it.
 
