@@ -7,6 +7,7 @@ rm(list = ls())
 #Preparations
 #You can install packages we need for the workshop via the RStudio menue, or run the below code:
 
+#Need to have
 install.packages("tm")
 install.packages("topicmodels")
 install.packages("slam")
@@ -22,6 +23,20 @@ install.packages("doParallel")
 install.packages("ggplot2")
 install.packages("scales")
 install.packages("plotly")
+
+#Nice to have
+install.packages("data.table")
+install.packages("textmineR")
+install.packages("collapsibleTree")
+install.packages("data.tree")
+install.packages("treemap")
+install.packages("RColorBrewer")
+install.packages("networkD3")
+
+#A couåle of the "nice to have packages" are not yet availiable on cran, so we need to get them directly from github. 
+install.packages("devtools") #first install devtools
+devtools::install_github("jeromefroe/circlepackeR") #then call devtools, point to the repository and get the package from git hub
+devtools::install_github("d3treeR/d3treeR")
 
 #Testload the packages
 library(tm)
@@ -44,8 +59,18 @@ library(doParallel)
 library(ggplot2)
 library(scales)
 library(plotly)
+library(data.table)
+library(textmineR)
+library(collapsibleTree)
+library(data.tree)
+library(treemap)
+library(RColorBrewer)
+library(networkD3)
 
+library(circlepackeR)
+library(d3treeR)
 
+#I think that's all.
 
 GMY <- "MYA"
 GMY

@@ -68,7 +68,7 @@ jsd1 <- CalcJSDivergence(jsd1, y = NULL, by_rows = FALSE)
 jsd1 <- as.matrix(jsd1) #to prepare for MDS
 
 #MDS
-#jsd1 is a (symmetrical 80*80) distance matrix, 
+#jsd1 is a (symmetrical 100*100) distance matrix, 
 #so we can pass it down to a MDS...:
 fit <- cmdscale(jsd1,eig=TRUE, k=2) # k is the number of dim
 x <- fit$points[,1]
