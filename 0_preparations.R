@@ -33,9 +33,10 @@ install.packages("treemap")
 install.packages("RColorBrewer")
 install.packages("networkD3")
 
-#A couåle of the "nice to have packages" are not yet availiable on cran, so we need to get them directly from github. 
+#A couple of the "nice to have packages" are not yet availiable on cran, so we need to get them directly from github
 install.packages("devtools") #first install devtools
-devtools::install_github("jeromefroe/circlepackeR") #then call devtools, point to the repository and get the package from git hub
+#then call devtools, point to the repository and get the package from github
+devtools::install_github("jeromefroe/circlepackeR") 
 devtools::install_github("d3treeR/d3treeR")
 
 #Testload the packages
