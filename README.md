@@ -13,23 +13,9 @@ All material is unlicensed, i.e. donated to the public domain. For R, Rstudio an
 
 Responsible for this workshop: [Love Börjeson](love.borjeson@kb.se), Director of KBLab at the National Library of Sweden.
 
-You can take part in the workshop in two ways, in the cloud or locally:
+You can take part in the workshop in two ways, in the cloud or locally. Running the workshop in the cloud is recommended for inexperienced R-users, but you loose some functionality. Should you wish to run the workshop in the cloud, switch to this repo: https://github.com/love-borjeson/tm_ws. Otherwise, continue with the preparations below.
 
-**Option 1. Run in RStudio Cloud** (recommended for inexperienced users)
-
-Get an account for free, here: https://rstudio.cloud
-
-Navigate to the project, here: https://rstudio.cloud/spaces/68618/project/1257624
-
-In the bottom right workspace, open the "Files" tab (i.e. NOT the ol' "File" menu at the top).
-
-Open "1_simple_model.R" and wait for the workshop to start.
-
-That's it.
-
-**Option 2. Run in your local IDE**
-
-**Preparations** IMPORTANT: DO THIS PRIOR TO THE WORKSHOP
+**Preparations** 
 
 It is usually pretty straight forward to complete the preparatory steps below. If you still encounter problems, consult your IT-support at your department. You can also try googling: if you get an error message, try pasting it into your browser.
 
