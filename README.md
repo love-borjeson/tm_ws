@@ -13,7 +13,7 @@ All material is unlicensed, i.e. donated to the public domain. For R, Rstudio an
 
 Responsible for this workshop: [Love Börjeson](love.borjeson@kb.se), Director of KBLab at the National Library of Sweden.
 
-You can take part in the workshop in two ways, in the cloud or locally. Running the workshop in the cloud is recommended for inexperienced R-users, but you loose some functionality. Should you wish to run the workshop in the cloud, switch to this repo: https://github.com/love-borjeson/tm_ws. Otherwise, continue with the preparations below.
+You can take part in the workshop in two ways, in the cloud or locally. Running the workshop in the cloud is recommended for inexperienced R-users, but you loose some functionality. Should you wish to run the workshop in the cloud, switch to this repo: https://github.com/love-borjeson/tm_ws_cloud. Otherwise, continue with the preparations below.
 
 **Preparations** 
 
