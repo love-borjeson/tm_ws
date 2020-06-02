@@ -225,7 +225,7 @@ p
 
 ggplotly(p)
 #So here too, perplexity measures disagrees with the rest of the pack...
-#Nonetheless: Should we keep looking for K, it is between 8 and 120 we should look.
+#Nonetheless: Should we keep looking for K, it is between 80 and 160 we should look.
 
 GMY <- "MYA"
 GMY 
