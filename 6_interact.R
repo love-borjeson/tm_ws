@@ -6,6 +6,9 @@ rm(list = ls())
 #We will create an app to interact with out topic model via two outputs,
 #topicDocProbabilities (gamma) and topic summary. We will enrich the latter a bit.
 
+#The app can also be found here:
+#https://love-borjeson.shinyapps.io/interact2/
+
 topicDocProbabilities <- readRDS("topicDocProbabilities.rds")
 head(topicDocProbabilities)
 topicDocProbabilities[, 2:101] <- round(topicDocProbabilities[, 2:101], 4) #We don't need the full format...
@@ -79,7 +82,7 @@ library(DT)
 
 #The user interface
 ui <- fluidPage(
-  title = "Examples of DataTables",
+  title = "Model-Interaction App",
   sidebarLayout(
     sidebarPanel(
       conditionalPanel(
@@ -120,7 +123,6 @@ print(vect2) #Copy the print output from the console and paste it into the Javas
 
 server <- function(input, output) {
   
-  # sorted columns are colored now because CSS are attached to them
   output$tbl <- DT::renderDataTable({
     DT::datatable(topicDocProbabilities[, 1:103],
                   extensions = c('FixedColumns'),
@@ -154,11 +156,10 @@ for (var i = 0; i < tips.length; i++) {
   
   output$tbl2 <- DT::renderDataTable({
     DT::datatable(topjokes_w,
-                  extensions = c('FixedColumns', "Buttons"),
+                  extensions = c('FixedColumns'),
                   options = list(
                     pageLength = 25,
                     dom = 'Bfrtip',
-                    buttons = c('csv', 'excel', 'pdf', 'print'),
                     scrollX = TRUE,
                     fixedColumns = list(leftColumns = 1),
                     fixedHeader = TRUE,
